@@ -1,0 +1,131 @@
+:root { 
+    --accent-color: #feb900; 
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Add New Post Button */
+.add-post-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.add-post-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.add-post-btn:hover {
+    background:var(--accent-color);
+}
+
+/* Posts Grid */
+.posts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.posts-table th, .posts-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.posts-table th {
+    background-color: #f4f4f4;
+}
+
+.posts-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.edit-btn, .delete-btn {
+    text-decoration: none;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    text-decoration: underline;
+}
+
+    /* Form Styling */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Textarea Styling */
+form input[type="text"],
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Textarea Size */
+form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Submit Button */
+form button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+/* Placeholder Color */
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        max-width: 90%;
+    }
+}
