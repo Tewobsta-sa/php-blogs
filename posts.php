@@ -1,5 +1,11 @@
 <?php 
 include 'db.php';
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php"); // Redirect to login if not authenticated
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,15 +16,52 @@ include 'db.php';
     <title>Blog Posts</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
+
+<style>
+    .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f7f6;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.add-post-container {
+    font-size: 16px;
+}
+
+.add-post-btn {
+    text-decoration: none;
+    background: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.add-post-btn:hover {
+    background: #4cae4c;
+}
+
+</style>
 <body>
 
     <div style="padding: 20px;">
         <h1 class="page-title">Recent Blog Posts</h1>
 
         <!-- Add New Post Button -->
-        <div class="add-post-container">
-            <a href="create.php" class="add-post-btn">➕ Add New Post</a>
+        <div class="row">
+            <div class="add-post-container">
+                <a href="create.php" class="add-post-btn">➕ Add New Post</a>
+            </div>
+            <div>
+                <a href="logout.php" class="add-post-btn">Logout</a>
+            </div>
         </div>
+
+        
+        
 
         <table class="posts-table">
     <thead>
